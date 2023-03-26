@@ -1,0 +1,124 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c1c1c;
+  background: radial-gradient(circle, #3c3c3c 0%, #1c1c1c 100%);
+}
+
+.slider {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+}
+.slider__wrapper {
+  overflow: hidden;
+}
+.slider__slide {
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+.slider__slide:not(:first-child) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.slider__slide_active {
+  opacity: 1;
+}
+.slider__slide img {
+  width: 100%;
+  height: auto;
+}
+.slider__pagination {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  z-index: 10;
+  display: flex;
+  gap: 5px;
+  transform: translateX(-50%);
+}
+.slider__pagination-btn {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  background-color: #fff;
+  opacity: 0.3;
+  border-radius: 50%;
+  transition: opacity 0.5s;
+}
+.slider__pagination-btn:hover {
+  cursor: pointer;
+}
+.slider__pagination-btn_active {
+  opacity: 0.7;
+}
+.slider__navigation {
+  width: 100%;
+}
+.slider__navigation-prev, .slider__navigation-next {
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  transition: opacity 0.5;
+  opacity: 0.7;
+}
+.slider__navigation-prev.disabled, .slider__navigation-next.disabled {
+  opacity: 0.2;
+}
+.slider__navigation-prev:hover, .slider__navigation-next:hover {
+  cursor: pointer;
+}
+.slider__navigation-prev::before, .slider__navigation-next::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 3px;
+  background-color: #fff;
+}
+.slider__navigation-prev::after, .slider__navigation-next::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 3px;
+  background-color: #fff;
+}
+.slider__navigation-prev {
+  position: absolute;
+  left: 5px;
+}
+.slider__navigation-prev::before {
+  transform: rotate(-30deg) translateY(8px);
+}
+.slider__navigation-prev::after {
+  transform: rotate(30deg) translateY(-8px);
+}
+.slider__navigation-next {
+  position: absolute;
+  right: 5px;
+  transform: rotate(180deg);
+}
+.slider__navigation-next::before {
+  transform: rotate(-30deg) translateY(8px);
+}
+.slider__navigation-next::after {
+  transform: rotate(30deg) translateY(-8px);
+}/*# sourceMappingURL=style.css.map */
